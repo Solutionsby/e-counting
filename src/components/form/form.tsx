@@ -9,10 +9,13 @@ interface FormData {
 	telefon: string;
 	message: string;
 }
+interface FormProps {
+	formReference: React.RefObject<HTMLDivElement>;
+}
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export const Form = () => {
+export const Form: React.FC<FormProps> = ({ formReference }) => {
 	const [formData, setFormData] = useState<FormData>({
 		imie: "",
 		nazwisko: "",
@@ -110,9 +113,10 @@ export const Form = () => {
 
 	return (
 		<div
-			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto rounded-2xl justify-center items-center  shadow-secendary ${
+			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto rounded-2xl justify-center items-center  shadow-secendary mt-[400vh] ${
 				sended ? "shadow-none" : "shadow-2xl"
-			}`}>
+			}`}
+			ref={formReference}>
 			<TransitionGroup>
 				{!sended ? (
 					<CSSTransition key="form" timeout={500} classNames="fade">
