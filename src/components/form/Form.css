@@ -1,0 +1,22 @@
+/* Form.css */
+.fade-enter {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+}
+.fade-enter-active {
+	opacity: 1;
+	max-height: 1000px;
+	transition: opacity 500ms ease-in, max-height 500ms ease-in;
+}
+.fade-exit {
+	opacity: 1;
+	max-height: 1000px;
+}
+.fade-exit-active {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	box-shadow: none;
+	transition: opacity 500ms ease-out, max-height 500ms ease-out;
+}

@@ -1,8 +1,17 @@
+import { useRef } from "react";
 import "./App.css";
-import { Form } from "./components/form/form";
+import { Header } from "./components/header/Header";
+import { ScrollPrvider } from "./ScrollProvider";
+import { Form } from "./components/form/Form";
 
 function App() {
-	return <Form />;
+	const formReference = useRef<HTMLDivElement>(null);
+	return (
+		<ScrollPrvider>
+			<Header formReference={formReference} />
+			<Form formReference={formReference} />
+		</ScrollPrvider>
+	);
 }
 
 export default App;
