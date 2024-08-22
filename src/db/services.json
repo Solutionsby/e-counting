@@ -1,0 +1,20 @@
+{
+    "services":[
+        {
+            "title":"Początkujących przedsiębiorców",
+            "description":"Pomagamy w stawianiu pierwszych kroków, zapewniając solidne podstawy prawne i biznesowe.",
+            "icon":"fa-solid fa-lightbulb"
+        },
+        {
+            "title":"Małych i średnich firmy",
+            "description":"Ułatwiamy codzienne zarządzanie, doradzając w kwestiach prawnych i biznesowych.",
+             "icon":"fa-solid fa-briefcase"
+        },
+        {
+            "title":"Doświadczonych właścicieli",
+            "description":"Wspieramy rozwój i adaptację do zmieniającego się rynku, zapewniając aktualne i trafne porady.",
+            "icon":"fa-solid fa-chart-line"
+        }
+    ]
+}
+
