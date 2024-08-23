@@ -113,7 +113,7 @@ export const Form: React.FC<FormProps> = ({ formReference }) => {
 
 	return (
 		<div
-			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto rounded-2xl justify-center items-center  shadow-secendary mt-[400vh] ${
+			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto m-10 rounded-2xl justify-center items-center  shadow-secendary  ${
 				sended ? "shadow-none" : "shadow-2xl"
 			}`}
 			ref={formReference}>
