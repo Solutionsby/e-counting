@@ -23,7 +23,7 @@ e-counting to aplikacja webowa zbudowana przy użyciu React i Tailwind CSS. Proj
 Aby rozpocząć pracę z projektem, sklonuj repozytorium i zainstaluj zależności:
 
 ```bash
-git clone https://github.com/your-username/e-counting.git
+git clone https://github.com/Solutionsby/e-counting.git
 cd e-counting
 npm install
 ```
