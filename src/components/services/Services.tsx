@@ -18,7 +18,6 @@ interface ServicesProps {
 export const Services: React.FC<ServicesProps> = ({ formReference }) => {
 	const goToTop = useRef<HTMLDivElement>(null);
 	const showTheButton = useObserveFunction(goToTop);
-	console.log(showTheButton);
 	return (
 		<div className=" bg-primary text-complWhite h-auto w-full flex flex-col">
 			<div className="flex flex-col items-center" ref={goToTop}>

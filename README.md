@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+# e-counting
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+e-counting to nowoczesny projekt frontendowy wykorzystujący React oraz Tailwind CSS, skoncentrowany na dostarczaniu estetycznych i responsywnych rozwiązań dla aplikacji webowych.
 
-Currently, two official plugins are available:
+## Spis treści
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Opis projektu](#opis-projektu)
+- [Wymagania](#wymagania)
+- [Instalacja](#instalacja)
+- [Skrypty](#skrypty)
 
-## Expanding the ESLint configuration
+## Opis projektu
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+e-counting to aplikacja webowa zbudowana przy użyciu React i Tailwind CSS. Projekt wykorzystuje nowoczesne technologie, aby zapewnić responsywny interfejs użytkownika oraz efektywne zarządzanie stanem aplikacji.
 
-- Configure the top-level `parserOptions` property like this:
+## Wymagania
 
-```js
-export default tseslint.config({
-	languageOptions: {
-		// other options...
-		parserOptions: {
-			project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-			tsconfigRootDir: import.meta.dirname,
-		},
-	},
-});
+- Node.js (v16 lub wyższy)
+- npm (v8 lub wyższy)
+
+## Instalacja
+
+Aby rozpocząć pracę z projektem, sklonuj repozytorium i zainstaluj zależności:
+
+```bash
+git clone https://github.com/your-username/e-counting.git
+cd e-counting
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Skrypty
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-	// Set the react version
-	settings: { react: { version: "18.3" } },
-	plugins: {
-		// Add the react plugin
-		react,
-	},
-	rules: {
-		// other rules...
-		// Enable its recommended rules
-		...react.configs.recommended.rules,
-		...react.configs["jsx-runtime"].rules,
-	},
-});
+```bash
+npm run dev: Uruchamia lokalny serwer deweloperski przy użyciu Vite.
+npm run build: Buduje projekt do produkcji, kompilując TypeScript i generując statyczne pliki za pomocą Vite.
+npm run lint: Uruchamia ESLint do analizy kodu źródłowego.
+npm run preview: Podgląda projekt zbudowany do produkcji.
 ```

@@ -8,6 +8,7 @@ import { HeroSection } from "./components/hero/HeroSection";
 import { Services } from "./components/services/Services";
 import { Feature } from "./components/feature/feature";
 import { UniqueFeatures } from "./components/uniqueFeatures/uniqueFeatures";
+import { Footer } from "./components/footer/footer";
 
 function App() {
 	const formReference = useRef<HTMLDivElement>(null);
@@ -19,6 +20,7 @@ function App() {
 			<Feature />
 			<UniqueFeatures formReference={formReference} />
 			<Form formReference={formReference} />
+			<Footer />
 		</ScrollPrvider>
 	);
 }
