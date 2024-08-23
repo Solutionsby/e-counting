@@ -1,0 +1,28 @@
+{
+    "reviews":[
+        {
+            "title":"Marcin Jaworski",
+            "position":"NexGen Softworks",
+            "review":"Dzięki wsparciu e-counting nasza firma osiągnęła doskonałą kontrolę nad budżetem i kosztami projektów IT. Doradztwo pod kątem optymalizacji finansowej było kluczowe dla naszego sukcesu.",
+            "photo":"./photos/reviews/Mockup_FirmaOpinie.jpg"
+        },
+        {
+            "title":"Marcin Nowak",
+            "position":"Quantum Byte Innovations",
+            "review":"E-counting zapewnia profesjonalną obsługę w zakresie kadr i płac, księgowości oraz wsparcia prawnego. Poziom realizowanych usług  zawsze przekracza nasze oczekiwania. Dziękujemy za długoletnią, partnerską współpracę, solidność oraz rzetelność w prowadzeniu naszych spraw finansowych.",
+            "photo":"./photos/reviews/Mockup_FirmaOpinie.jpg"
+        },
+        {
+            "title":"Robert Król",
+            "position":"DataWave Solutions",
+            "review":"E-counting wykazało się doskonałą znajomością specyfiki branży IT, co przekłada się na efektywną obsługę naszych rachunków i podatków. To niezawodny partner, na którym można polegać w trudnym świecie finansów.",
+            "photo":"./photos/reviews/Mockup_FirmaOpinie.jpg"
+        },
+        {
+            "title":"Marcin Kacprowicz",
+            "position":"CodePulse Technologies",
+            "review":"e-countingu od wielu lat, a współpraca była zawsze efektywna i bezproblemowa. Zdolność do bieżącego monitorowania zmian w przepisach podatkowych zwiększa naszą pewność, że wszystkie świadczone przez nas usługi są zgodne z obowiązującym prawem.",
+            "photo":"./photos/reviews/Mockup_FirmaOpinie.jpg"
+        }
+    ]
+}

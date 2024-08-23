@@ -3,6 +3,26 @@ import {
 	faLightbulb,
 	faBriefcase,
 	faChartLine,
+	faGavel,
+	faFileContract,
+	faUserTie,
+	faBook,
+	faBalanceScale,
+	faBuilding,
+	faQuoteRight,
+	faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faLightbulb, faBriefcase, faChartLine);
+library.add(
+	faLightbulb,
+	faBriefcase,
+	faChartLine,
+	faGavel,
+	faFileContract,
+	faUserTie,
+	faBook,
+	faBalanceScale,
+	faBuilding,
+	faQuoteRight,
+	faArrowUp
+);
