@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const Feature: React.FC = () => {
+
 	return (
 		<div className="bg-complWhite text-secendary py-10 px-5 w-full">
 			<h1 className="text-4xl text-center mb-10">Usługi doradztwa prawnego</h1>

@@ -1,10 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { useObserveFunction } from "../../utils/useObserve";
-import { ScrollToTop } from "../../utils/scrollToTop";
 import { Button } from "../button/Button";
 import { services } from "../../db/services.json";
-import { useRef } from "react";
+
 
 interface ServProps {
 	icon: string;
@@ -16,11 +14,10 @@ interface ServicesProps {
 }
 
 export const Services: React.FC<ServicesProps> = ({ formReference }) => {
-	const goToTop = useRef<HTMLDivElement>(null);
-	const showTheButton = useObserveFunction(goToTop);
+
 	return (
 		<div className=" bg-primary text-complWhite h-auto w-full flex flex-col">
-			<div className="flex flex-col items-center" ref={goToTop}>
+			<div className="flex flex-col items-center">
 				<h1 className="text-4xl m-2 text-center">Dla każdego przedsiębiorcy</h1>
 				<p className="text-xl text-center ">
 					Nasza oferta jest idealna dla każdego, kto prowadzi działalność
@@ -43,13 +40,13 @@ export const Services: React.FC<ServicesProps> = ({ formReference }) => {
 				className="flex items-center justify-center w-[80%] mx-auto h-auto p-2 m-5 bg-primary border-secendary border-2 rounded-md text-white font-bold hover:bg-white hover:text-primary transition duration-500">
 				CHCĘ SKORZYSTAĆ Z WASZEJ WIEDZY
 			</Button>
-			<div
-				className={` flex text-primary font-bold text-xl animate-bounce h-12 w-12 rounded-full bg-secendary fixed bottom-2 right-2 ${
-					showTheButton ? "opacity-0 translate-x-10" : "opacity-100 translate-x"
+			{/* <div
+				className={` flex text-primary font-bold text-xl opacity-0 animate-bounce h-12 w-12 rounded-full bg-secendary fixed bottom-2 right-2 ${
+					showTheButton ? "translate-x-10" : "opacity-100 translate-x"
 				} duration-500 text-black  justify-center items-center border-2 border-primary z-20`}
 				onClick={ScrollToTop}>
 				<FontAwesomeIcon icon={"fa-solid fa-arrow-up" as IconProp} />
-			</div>
+			</div> */}
 		</div>
 	);
 };
