@@ -37,7 +37,7 @@ export const Services: React.FC<ServicesProps> = ({ formReference }) => {
 			</div>
 			<Button
 				reference={formReference}
-				className="flex items-center justify-center w-[80%] mx-auto h-auto p-2 m-5 bg-primary border-secendary border-2 rounded-md text-white font-bold hover:bg-white hover:text-primary transition duration-500">
+				className="flex items-center justify-center w-[60%] mx-auto h-auto p-3 m-5 bg-secendary border-complWhite border-2 rounded-md text-primary font-bold hover:bg-white hover:text-primary transition duration-500">
 				CHCĘ SKORZYSTAĆ Z WASZEJ WIEDZY
 			</Button>
 		</div>
