@@ -40,7 +40,7 @@ export const UniqueFeatures: React.FC<UniqueFeaturesProps> = ({
 
 			<Button
 				reference={formReference}
-				className="flex items-center justify-center w-[80%] md:w-[40%] h-auto p-2 bg-primary border-secendary border-2 rounded-md text-white font-bold hover:bg-white hover:text-primary transition duration-500 m-5">
+				className="flex items-center justify-center w-[60%] md:w-[40%] h-auto p-4 bg-secendary border-complWhite border-2 rounded-md text-primary font-bold hover:bg-white hover:text-primary transition duration-500 m-5">
 				CHCĘ Z WAMI WSPÓŁPRACOWAĆ
 			</Button>
 			<Carusel>
