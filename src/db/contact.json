@@ -1,0 +1,16 @@
+{
+    "whyUs":[
+        {
+            "icon":"fa-solid fa-headset",
+            "description":"Szybka i profesjonalna pomoc prawna: Nasz zespół prawników jest zawsze gotowy, aby udzielić natychmiastowej pomocy prawnej, dostosowanej do Twoich potrzeb."
+        },
+        {
+            "icon":"fa-solid fa-handshake",
+            "description":"Indywidualne podejście do każdej sprawy: Rozumiemy, że każda sytuacja prawna jest inna, dlatego dostosowujemy nasze podejście do każdego klienta indywidualnie."
+        },
+        {
+            "icon":"fa-solid fa-gift",
+            "description":"Bezpłatna wstępna konsultacja: Zanim podejmiesz decyzję o współpracy, oferujemy bezpłatną konsultację, aby lepiej zrozumieć Twoje potrzeby i przedstawić najlepsze rozwiązania."
+        }
+    ]
+}
