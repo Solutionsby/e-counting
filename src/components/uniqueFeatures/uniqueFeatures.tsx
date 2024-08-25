@@ -40,18 +40,18 @@ export const UniqueFeatures: React.FC<UniqueFeaturesProps> = ({
 
 			<Button
 				reference={formReference}
-				className="flex items-center justify-center w-[80%] md:w-[40%] h-auto p-2 bg-primary border-secendary border-2 rounded-md text-white font-bold hover:bg-white hover:text-primary transition duration-500 m-5">
+				className="flex items-center justify-center w-[60%] md:w-[40%] h-auto p-4 bg-secendary border-complWhite border-2 rounded-md text-primary font-bold hover:bg-white hover:text-primary transition duration-500 m-5">
 				CHCĘ Z WAMI WSPÓŁPRACOWAĆ
 			</Button>
 			<Carusel>
 				{reviews.map(
 					({ title, position, review, photo }: ReviewProps, index) => (
 						<div key={index} className="min-w-[80%] md:min-w-[40%]">
-							<div className="h-[50vh] w-full snap-center rounded-xl bg-secendary shadow-lg shadow-complWhite/40 flex flex-col items-center gap-2">
+							<div className=" w-full h-[500px] snap-center rounded-xl bg-secendary shadow-lg shadow-complWhite/40 flex flex-col items-center gap-2">
 								<div
 									style={{ backgroundImage: `url(${photo})` }}
 									className="w-28 h-28 bg-cover bg-center rounded-full mt-5"></div>
-								<div className="w-[95%] h-[60%] flex flex-col gap-4 bg-complWhite rounded-xl p-2 shadow-lg shadow-primary/20 justify-around">
+								<div className="w-[95%] h-[60%] flex flex-col gap-4 bg-complWhite rounded-xl p-2 shadow-lg shadow-primary/20 justify-around mb-5">
 									<p className="p-1 w-full text-[13px]">{review}</p>
 									<div>
 										<h1 className="text-secendary">{title}</h1>

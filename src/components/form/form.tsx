@@ -112,11 +112,13 @@ export const Form: React.FC<FormProps> = ({ formReference }) => {
 	};
 
 	return (
+		<>
+		<div ref={formReference} className="mb-[11vh]"></div>
 		<div
-			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto m-10 rounded-2xl justify-center items-center  shadow-secendary  ${
+			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto m-10 rounded-2xl justify-center items-center  shadow-secendary ${
 				sended ? "shadow-none" : "shadow-2xl"
 			}`}
-			ref={formReference}>
+			>
 			<TransitionGroup>
 				{!sended ? (
 					<CSSTransition key="form" timeout={500} classNames="fade">
@@ -181,5 +183,6 @@ export const Form: React.FC<FormProps> = ({ formReference }) => {
 				)}
 			</TransitionGroup>
 		</div>
+		</>
 	);
 };
