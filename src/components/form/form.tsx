@@ -1,6 +1,9 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import "./Form.css"; // Dodamy tutaj style animacji
+import { whyUs } from "../../db/contact.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import "./Form.css";
 
 interface FormData {
 	imie: string;
@@ -9,10 +12,15 @@ interface FormData {
 	telefon: string;
 	message: string;
 }
+
 interface FormProps {
 	formReference: React.RefObject<HTMLDivElement>;
 }
 
+interface WhyUs {
+	icon: string;
+	description: string;
+}
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const Form: React.FC<FormProps> = ({ formReference }) => {
@@ -32,6 +40,9 @@ export const Form: React.FC<FormProps> = ({ formReference }) => {
 	>({});
 	const [submitted, setSubmitted] = useState(false);
 	const [sended, setSended] = useState(false);
+
+	const formRef = useRef<HTMLDivElement>(null); // Ref dla formularza
+	const successRef = useRef<HTMLDivElement>(null); // Ref dla komunikatu sukcesu
 
 	const validateField = (name: keyof FormData, value: string): string => {
 		switch (name) {
@@ -113,76 +124,99 @@ export const Form: React.FC<FormProps> = ({ formReference }) => {
 
 	return (
 		<>
-		<div ref={formReference} className="mb-[11vh]"></div>
-		<div
-			className={`flex flex-col w-[90vw] border-primary border-2 mx-auto m-10 rounded-2xl justify-center items-center  shadow-secendary ${
-				sended ? "shadow-none" : "shadow-2xl"
-			}`}
-			>
-			<TransitionGroup>
-				{!sended ? (
-					<CSSTransition key="form" timeout={500} classNames="fade">
-						<div>
-							<h1 className="text-2xl font-bold text-primary m-4">
-								Skontaktuj się z nami!
-							</h1>
-							<form
-								onSubmit={handleSubmit}
-								className="w-[100%] h-[99%] rounded-xl flex flex-col items-center justify-between">
-								{Object.entries(formData).map(([key, value]) => (
-									<div key={key} className="text-complWhite">
-										{key === "message" ? (
-											<textarea
-												id={key}
-												name={key}
-												value={value}
-												onChange={handleChange}
-												onBlur={handleBlur}
-												placeholder="Wiadomosc"
-												className={getInputClassName(key as keyof FormData)}
-											/>
-										) : (
-											<input
-												type={
-													key === "email"
-														? "email"
-														: key === "telefon"
-														? "tel"
-														: "text"
-												}
-												id={key}
-												name={key}
-												value={value}
-												onChange={handleChange}
-												onBlur={handleBlur}
-												placeholder={key}
-												className={getInputClassName(key as keyof FormData)}
-											/>
-										)}
-										{shouldShowError(key as keyof FormData) && (
-											<p className="text-red-500 m-1 text-sm">
-												{errors[key as keyof FormData]}
-											</p>
-										)}
-									</div>
-								))}
-								<button
-									type="submit"
-									className="w-4/5 h-10 text-2xl font-bold bg-primary my-10 rounded-lg text-complWhite">
-									Wyślij
-								</button>
-							</form>
+			<div ref={formReference} className="mb-[11vh]"></div>
+			<div
+				className={`flex flex-col w-[90vw] border-primary border-2 mx-auto m-10 rounded-2xl justify-center items-center shadow-secendary ${
+					sended ? "shadow-none" : "shadow-2xl"
+				} md:justify-around md:flex-row`}>
+				<div className="hidden md:w-[50%] md:flex flex-col gap-10 py-5">
+					<div className="text-3xl font-bold text-primary">
+						Korzyści ze współpracy z nami:
+					</div>
+					{whyUs.map(({ icon, description }: WhyUs, index) => (
+						<div key={index} className="flex items-center text-primary gap-10">
+							<FontAwesomeIcon
+								icon={icon as IconProp}
+								className="text-4xl text-secendary"
+							/>
+							<p className="font-bold text-2xl">{description}</p>
 						</div>
-					</CSSTransition>
-				) : (
-					<CSSTransition key="success" timeout={500} classNames="fade">
-						<div className="w-100vw h-20 flex justify-center items-center font-bold text-primary">
-							Twoja wiadomość została wysłana!
-						</div>
-					</CSSTransition>
-				)}
-			</TransitionGroup>
-		</div>
+					))}
+				</div>
+				<TransitionGroup>
+					{!sended ? (
+						<CSSTransition
+							key="form"
+							nodeRef={formRef}
+							timeout={500}
+							classNames="fade">
+							<div ref={formRef}>
+								<h1 className="text-2xl font-bold text-primary m-4">
+									Skontaktuj się z nami!
+								</h1>
+								<form
+									onSubmit={handleSubmit}
+									className="w-[100%] h-[99%] rounded-xl flex flex-col items-center justify-between">
+									{Object.entries(formData).map(([key, value]) => (
+										<div key={key} className="text-complWhite">
+											{key === "message" ? (
+												<textarea
+													id={key}
+													name={key}
+													value={value}
+													onChange={handleChange}
+													onBlur={handleBlur}
+													placeholder="Wiadomosc"
+													className={getInputClassName(key as keyof FormData)}
+												/>
+											) : (
+												<input
+													type={
+														key === "email"
+															? "email"
+															: key === "telefon"
+															? "tel"
+															: "text"
+													}
+													id={key}
+													name={key}
+													value={value}
+													onChange={handleChange}
+													onBlur={handleBlur}
+													placeholder={key}
+													className={getInputClassName(key as keyof FormData)}
+												/>
+											)}
+											{shouldShowError(key as keyof FormData) && (
+												<p className="text-red-500 m-1 text-sm">
+													{errors[key as keyof FormData]}
+												</p>
+											)}
+										</div>
+									))}
+									<button
+										type="submit"
+										className="w-4/5 h-10 text-2xl font-bold bg-primary my-10 rounded-lg text-complWhite">
+										Wyślij
+									</button>
+								</form>
+							</div>
+						</CSSTransition>
+					) : (
+						<CSSTransition
+							key="success"
+							nodeRef={successRef}
+							timeout={500}
+							classNames="fade">
+							<div
+								ref={successRef}
+								className="w-100vw h-20 flex justify-center items-center font-bold text-primary">
+								Twoja wiadomość została wysłana!
+							</div>
+						</CSSTransition>
+					)}
+				</TransitionGroup>
+			</div>
 		</>
 	);
 };

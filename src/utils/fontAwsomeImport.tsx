@@ -11,6 +11,9 @@ import {
 	faBuilding,
 	faQuoteRight,
 	faArrowUp,
+	faHeadset,
+	faHandshake,
+	faGift,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -24,5 +27,8 @@ library.add(
 	faBalanceScale,
 	faBuilding,
 	faQuoteRight,
-	faArrowUp
+	faArrowUp,
+	faHeadset,
+	faHandshake,
+	faGift
 );
