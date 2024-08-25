@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Carusel } from "../../utils/carusel";
 import { Button } from "../button/Button";
 import { reviews } from "../../db/reviews.json";
@@ -17,6 +17,9 @@ interface UniqueFeaturesProps {
 export const UniqueFeatures: React.FC<UniqueFeaturesProps> = ({
 	formReference,
 }) => {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [itemWidth, setItemWidth] = useState(0);
+	const carouselRef = useRef<HTMLDivElement>(null);
 	return (
 		<div className="w-full flex flex-col items-center px-4 py-8 bg-primary">
 			<h2 className="text-3xl font-bold text-center text-secendary mb-6">
@@ -43,15 +46,21 @@ export const UniqueFeatures: React.FC<UniqueFeaturesProps> = ({
 				className="flex items-center justify-center w-[60%] md:w-[40%] h-auto p-4 bg-secendary border-complWhite border-2 rounded-md text-primary font-bold hover:bg-white hover:text-primary transition duration-500 m-5">
 				CHCĘ Z WAMI WSPÓŁPRACOWAĆ
 			</Button>
-			<Carusel>
+			<Carusel
+				seterItemWidth={setItemWidth}
+				setterIndex={setCurrentIndex}
+				currentIndex={currentIndex}
+				numberOfElement={reviews.length}
+				reference={carouselRef}
+				itemWidth={itemWidth}>
 				{reviews.map(
 					({ title, position, review, photo }: ReviewProps, index) => (
-						<div key={index} className="min-w-[80%] md:min-w-[40%]">
-							<div className=" w-full h-[500px] snap-center rounded-xl bg-secendary shadow-lg shadow-complWhite/40 flex flex-col items-center gap-2">
+						<div key={index} className="min-w-[80%] md:min-w-[45%]">
+							<div className=" w-full h-[500px] snap-center rounded-xl bg-secendary shadow-lg shadow-complWhite/40 flex flex-col items-center gap-2 lg:flex-row">
 								<div
 									style={{ backgroundImage: `url(${photo})` }}
-									className="w-28 h-28 bg-cover bg-center rounded-full mt-5"></div>
-								<div className="w-[95%] h-[60%] flex flex-col gap-4 bg-complWhite rounded-xl p-2 shadow-lg shadow-primary/20 justify-around mb-5">
+									className="w-28 h-28 bg-cover bg-center rounded-full mt-5 lg:h-full lg:rounded-none lg:mt-0 lg:w-2/3"></div>
+								<div className="w-[95%] h-[60%] flex flex-col gap-4 bg-complWhite rounded-xl p-2 shadow-lg shadow-primary/20 justify-around mb-5 lg:mr-2">
 									<p className="p-1 w-full text-[13px]">{review}</p>
 									<div>
 										<h1 className="text-secendary">{title}</h1>

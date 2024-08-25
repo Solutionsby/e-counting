@@ -14,6 +14,8 @@ import {
 	faHeadset,
 	faHandshake,
 	faGift,
+	faAngleLeft,
+	faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -30,5 +32,7 @@ library.add(
 	faArrowUp,
 	faHeadset,
 	faHandshake,
-	faGift
+	faGift,
+	faAngleLeft,
+	faAngleRight
 );
