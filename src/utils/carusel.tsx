@@ -51,10 +51,8 @@ export const Carusel: React.FC<serviceProps> = ({
 		scrollToIndex(newIndex);
 	};
 
-	console.log(currentIndex);
-
 	return (
-		<div className="flex items-center ">
+		<div className="flex items-center">
 			<div
 				id="previous"
 				className="hidden  text-5xl lg:flex justify-center items-center cursor-pointer p-2 pb-8"
@@ -63,7 +61,7 @@ export const Carusel: React.FC<serviceProps> = ({
 			</div>
 			<div
 				ref={reference}
-				className="mt-4 flex w-full gap-4 snap-x overflow-x-auto">
+				className="scroll-smooth flex-1 gap-4 flex pb-5 snap-x snap-mandatory overflow-x-auto">
 				{children}
 			</div>
 			<div
