@@ -26,7 +26,7 @@ export const Services: React.FC<ServicesProps> = ({ formReference }) => {
 				{services.map(({ icon, title, description }: ServProps, index) => (
 					<div
 						key={index}
-						className="w-[85%] flex  flex-col items-center p-2 border-2 rounded-md mt-5 mb-5 gap-2 bg-secendary md:w-[25%] md:h-[300px] md:justify-center">
+						className="w-[85%] flex  flex-col items-center justify-around p-2 border-2 rounded-md mt-5 mb-5 gap-2 bg-secendary md:w-[25%] md:h-[350px] ">
 						<FontAwesomeIcon icon={icon as IconProp} className="text-5xl" />
 						<h1 className="text-2xl text-center">{title}</h1>
 						<p className="w-[70%] text-center">{description}</p>

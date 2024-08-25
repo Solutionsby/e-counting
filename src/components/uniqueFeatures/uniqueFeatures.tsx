@@ -62,7 +62,7 @@ export const UniqueFeatures: React.FC<UniqueFeaturesProps> = ({
 				itemWidth={itemWidth}>
 				{reviews.map(
 					({ title, position, review, photo }: ReviewProps, index) => (
-						<div key={index} className="min-w-[80%] md:min-w-[45%]">
+						<div key={index} className="min-w-[85%] md:min-w-[45%]">
 							<div className="h-[500px] snap-center rounded-xl bg-secendary shadow-lg shadow-complWhite/40 flex flex-col items-center lg:flex-row justify-around">
 								<div
 									style={{ backgroundImage: `url(${photo})` }}
